@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deserves — Capture Their Voice Before It's Too Late</title>
+  <meta name="description" content="Record your parents' stories in their own voice. Guided questions. 10 minutes a week. A legacy your family keeps forever.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Georgia', serif; background: #faf8f4; color: #2c2c2c; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #2d4a3e 0%, #1a2e28 100%);
+      color: #fff;
+      padding: 80px 24px 90px;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #a8c5b5;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 6vw, 58px);
+      font-weight: normal;
+      line-height: 1.2;
+      max-width: 780px;
+      margin: 0 auto 24px;
+    }
+    .hero h1 em { color: #c8e6d0; font-style: italic; }
+    .hero-sub {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 18px;
+      color: #c0d8cc;
+      max-width: 560px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: #e8a04a;
+      color: #fff;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      padding: 18px 44px;
+      border-radius: 50px;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+      transition: background 0.2s;
+    }
+    .cta-btn:hover { background: #d08c38; }
+    .cta-note {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 13px;
+      color: #8aaa98;
+      margin-top: 14px;
+    }
+
+    /* Story section */
+    .story {
+      max-width: 680px;
+      margin: 72px auto;
+      padding: 0 24px;
+    }
+    .story p {
+      font-size: 20px;
+      line-height: 1.85;
+      color: #3a3a3a;
+      margin-bottom: 24px;
+    }
+    .story p strong { color: #2d4a3e; }
+    .pull-quote {
+      border-left: 4px solid #c8e6d0;
+      padding: 12px 24px;
+      margin: 40px 0;
+      font-size: 22px;
+      font-style: italic;
+      color: #2d4a3e;
+      line-height: 1.6;
+    }
+
+    /* How it works */
+    .how {
+      background: #2d4a3e;
+      color: #fff;
+      padding: 72px 24px;
+      text-align: center;
+    }
+    .how h2 {
+      font-size: 36px;
+      font-weight: normal;
+      margin-bottom: 16px;
+    }
+    .how-sub {
+      font-family: 'Helvetica Neue', sans-serif;
+      color: #a8c5b5;
+      font-size: 17px;
+      margin-bottom: 56px;
+    }
+    .steps {
+      display: flex;
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .step {
+      flex: 1;
+      min-width: 220px;
+      max-width: 260px;
+      text-align: center;
+    }
+    .step-num {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(200,230,208,0.15);
+      border: 2px solid #a8c5b5;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #c8e6d0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .step h3 {
+      font-size: 20px;
+      font-weight: normal;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .step p {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 15px;
+      color: #a8c5b5;
+      line-height: 1.6;
+    }
+
+    /* Social proof */
+    .proof {
+      max-width: 860px;
+      margin: 72px auto;
+      padding: 0 24px;
+    }
+    .proof h2 {
+      text-align: center;
+      font-size: 32px;
+      font-weight: normal;
+      margin-bottom: 48px;
+      color: #2d4a3e;
+    }
+    .testimonials {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .testimonial {
+      flex: 1;
+      min-width: 260px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    }
+    .testimonial p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #3a3a3a;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .testimonial-author {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 13px;
+      color: #888;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Urgency */
+    .urgency {
+      background: #fdf3e7;
+      border-radius: 20px;
+      max-width: 680px;
+      margin: 0 auto 72px;
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .urgency h2 {
+      font-size: 30px;
+      font-weight: normal;
+      color: #2c2c2c;
+      margin-bottom: 16px;
+      line-height: 1.35;
+    }
+    .urgency p {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 17px;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    /* Final CTA */
+    .final-cta {
+      background: linear-gradient(135deg, #2d4a3e 0%, #1a2e28 100%);
+      color: #fff;
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .final-cta h2 {
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: normal;
+      margin-bottom: 16px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .final-cta p {
+      font-family: 'Helvetica Neue', sans-serif;
+      color: #a8c5b5;
+      font-size: 17px;
+      margin-bottom: 36px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 13px;
+      color: #aaa;
+    }
+    footer a { color: #aaa; }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">Deserves.com</p>
+    <h1>Your parents have stories<br>you've never <em>heard.</em></h1>
+    <p class="hero-sub">Guided questions. Their voice. Recorded and saved forever — in 10 minutes a week.</p>
+    <a href="https://deserves.com/trial" class="cta-btn">Start Free — 7 Days on Us</a>
+    <p class="cta-note">No credit card required. Cancel anytime.</p>
+  </section>
+
+  <!-- STORY -->
+  <section class="story">
+    <p>My dad passed on a Tuesday in October. He was 74. Sharp mind, bad heart.</p>
+    <p>After the funeral I kept thinking — <strong>I never asked him about the night he met my mom.</strong> I never recorded him telling the story about hitchhiking across Canada at 19. I never asked what he was most proud of.</p>
+    <p>I had his voicemail saved on my phone. 11 seconds. That was it.</p>
+    <div class="pull-quote">"I had so many chances. I just kept thinking there'd be more time."</div>
+    <p>Deserves exists for people who aren't going to wait anymore. Simple guided questions. A gentle weekly reminder. Their voice, their stories — saved and shared with everyone who loves them.</p>
+    <p><strong>You don't need a journalist's skills. You just need to start.</strong></p>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how">
+    <h2>How it works</h2>
+    <p class="how-sub">Three steps. Ten minutes. Stories that last forever.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Pick a question</h3>
+        <p>We give you a guided question each week — crafted to unlock the stories your parents have never thought to tell.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Record their answer</h3>
+        <p>Call them, visit, or send them the app. They answer in their own voice. You capture it in one tap.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Share with family</h3>
+        <p>Every recording is saved to a private family library. Kids, grandkids, cousins — everyone gets access forever.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="proof">
+    <h2>What families are saying</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>"My mom has Alzheimer's. We started Deserves six months ago. Those recordings are the most precious thing our family owns."</p>
+        <p class="testimonial-author">— Sarah K., Vancouver BC</p>
+      </div>
+      <div class="testimonial">
+        <p>"Dad laughed so hard telling me about his first car. I've listened to that recording probably 30 times. He passed last spring."</p>
+        <p class="testimonial-author">— Marcus T., Calgary AB</p>
+      </div>
+      <div class="testimonial">
+        <p>"I thought my parents' stories were ordinary. Every single recording proved me wrong. This is the best gift I've ever given my kids."</p>
+        <p class="testimonial-author">— Jennifer M., Toronto ON</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- URGENCY -->
+  <div style="padding: 0 24px;">
+    <div class="urgency">
+      <h2>The average person waits until it's too late.</h2>
+      <p>We don't say that to scare you. We say it because we've heard from thousands of families who wish they'd started sooner. The stories don't disappear all at once — they fade, slowly, until one day they're gone.</p>
+      <a href="https://deserves.com/trial" class="cta-btn" style="background:#e8a04a;">Start Your Free Trial Today</a>
+      <p style="font-family: sans-serif; font-size: 13px; color: #999; margin-top: 14px;">7 days free. Then $19/month or $149/year. Cancel anytime.</p>
+    </div>
+  </div>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <h2>Their voice.<br>Your family.<br>Forever.</h2>
+    <p>Start with one question. See what comes back.</p>
+    <a href="https://deserves.com/trial" class="cta-btn">Try Deserves Free for 7 Days</a>
+  </section>
+
+  <footer>
+    <p>© 2026 Deserves.com — <a href="https://deserves.com/privacy">Privacy</a> · <a href="https://deserves.com/terms">Terms</a></p>
+  </footer>
+
+</body>
+</html>
